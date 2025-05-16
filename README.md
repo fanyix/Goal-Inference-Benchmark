@@ -14,11 +14,10 @@ pip install -r requirements.txt
 ```
 
 ## Prepare Data and Models
-First, you need to get the access keys to the AWS S3 bucket. You can find that in the `ReadS3BucketSubmission2012Bot_accessKeys.csv` file along with the submission.
-Then, you can set the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to the corresponding values.
+First, you need to set up the keys to access the S3 bucket. You can do this by running the following commands in your terminal:
 ```
-export AWS_ACCESS_KEY_ID=XXX
-export AWS_SECRET_ACCESS_KEY=YYY
+export AWS_ACCESS_KEY_ID=AKIA6EUR7PFK2BPTV265
+export AWS_SECRET_ACCESS_KEY=a/g9ydC7FxmknJla6slDqE/CwVbGCmVlwuPKgHWI
 ```
 
 With the access keys configured, run this command to download the data for the benchmark:
