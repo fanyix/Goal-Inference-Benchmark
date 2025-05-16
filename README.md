@@ -48,7 +48,7 @@ ROOT_DIR
 │   │── DeepSeek-R1-Distill-Llama-70B
 ├── assets
 │   ├── raw_predictions
-│   │   ├── maestro_ob2_plm_25_05_12_21_09_13_QZDNPh
+│   │   ├── generative_internvl_2b_V.json
 │   │   ├── ...
 ```
 
@@ -76,3 +76,34 @@ MCQ: 0.871299
 Generative: 0.507109
 ```
 ## Analysis
+
+The analysis script consolidates results from different models, creates multiple data subsets, and evaluates results on them using varying combinations of input modalities.
+
+You need all the raw prediction files to be present under `assets/raw_predictions` to run subset analysis:
+```
+ROOT_DIR
+├── assets
+│   ├── raw_predictions
+│   │   ├── generative_internvl_2b_V.json
+│   │   ├── generative_internvl_2b_VA.json
+│   │   ├── ...
+```
+
+Run the command:
+```
+python subset_analysis.py -o ~/temp/
+```
+
+This will generate a `temp` directory in your home folder and save all the results and plots in it. If run successfully, you should see results similar to:
+```
+#### MODEL RESULTS on generative task ####
+internvl_2b: 0.2187 (0.2078, 0.2297)
+qwen_3b: 0.2534 (0.2418, 0.2649)
+llama3v: 0.3235 (0.3119, 0.3351)
+internvl_8b: 0.3571 (0.3442, 0.3691)
+qwen_7b: 0.4076 (0.3952, 0.42)
+llama4v: 0 (0, 0)
+internvl_78b: 0.4956 (0.4833, 0.5075)
+qwen_72b: 0.4988 (0.486, 0.5111)
+gpt_4.1: 0 (0, 0)
+```
