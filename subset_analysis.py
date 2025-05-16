@@ -40,7 +40,6 @@ SMALL_MODELS = ["internvl_2b", "qwen_3b"]
 MEDIUM_MODELS = ["llama3v", "internvl_8b", "qwen_7b"]
 LARGE_MODELS = ["llama4v", "internvl_78b", "qwen_72b"]
 MODELS = SMALL_MODELS + MEDIUM_MODELS + LARGE_MODELS
-ALL_MODELS = MODELS + ["gpt_4.1"]
 
 # Modalities and subsets
 INPUT_MODALITIES = ["V", "VA", "VD", "VL", "VADL", "VD*", "VL*"]
@@ -49,7 +48,7 @@ FULL_SUBSETS = SUBSETS + ["Full"]
 
 # Raw result paths
 RAW_RESULT_PATHS = {}
-for model in ALL_MODELS:
+for model in MODELS:
     RAW_RESULT_PATHS[model] = {}
     for input_modality in INPUT_MODALITIES:
         RAW_RESULT_PATHS[model][input_modality] = f"assets/raw_predictions/generative_{model}_{input_modality}.json"
@@ -342,7 +341,7 @@ if __name__ == "__main__":
     in_subset = "VADL"
     out_subset = "Full"
     t0 = time.time()
-    for model in ALL_MODELS:
+    for model in MODELS:
         try:
             total = len(results[model][in_subset][out_subset])
             mean, ci_lower, ci_upper = bootstrap_ci(
