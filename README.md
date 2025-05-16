@@ -14,10 +14,11 @@ pip install -r requirements.txt
 ```
 
 ## Prepare Data and Models
-First, you need to set up the keys to access the S3 bucket. You can do this by running the following commands in your terminal:
+First, you need to set up the keys to access the S3 bucket. You can find the keys (`s3_access_keys.sh`) in the zip file submitted for Supplemental Material.
+Then, you can either do `sh s3_access_keys.sh`, or set up the key directly by running the following command with the correct values swapped in:
 ```
-export AWS_ACCESS_KEY_ID=AKIA6EUR7PFK2BPTV265
-export AWS_SECRET_ACCESS_KEY=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
+export AWS_ACCESS_KEY_ID=FIND_THE_AWS_ACCESS_KEY_ID_IN_SUPPLEMENTAL_MATERIAL
+export AWS_SECRET_ACCESS_KEY=FIND_THE_AWS_SECRET_ACCESS_KEY_IN_SUPPLEMENTAL_MATERIAL
 ```
 
 With the access keys configured, run this command to download the data for the benchmark:
