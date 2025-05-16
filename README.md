@@ -78,9 +78,12 @@ Generative: 0.507109
 
 The analysis script consolidates results from different models, creates multiple data subsets, and evaluates results on them using varying combinations of input modalities.
 
-You need all the raw prediction files to be present under `assets/raw_predictions` to run subset analysis:
+You need two specific OB2 input files under `ob2` and all the raw prediction files to be present under `assets/raw_predictions` to run subset analysis:
 ```
 ROOT_DIR
+├── ob2
+│   ├── digital_state_v2.4.4.json
+│   ├── structured_goals.json
 ├── assets
 │   ├── raw_predictions
 │   │   ├── generative_internvl_2b_V.json
@@ -93,7 +96,7 @@ Run the command:
 python subset_analysis.py -o ~/temp/
 ```
 
-This will generate a `temp` directory in your home folder and save all the results and plots in it. If run successfully, you should see results similar to:
+This will generate a `temp` directory in your home folder and save all the results and plots in it. If run successfully, you should see results similar to the ones below around script's termination output on the terminal:
 ```
 #### MODEL RESULTS on generative task ####
 internvl_2b: 0.2187 (0.2078, 0.2297)
@@ -101,7 +104,7 @@ qwen_3b: 0.2534 (0.2418, 0.2649)
 llama3v: 0.3235 (0.3119, 0.3351)
 internvl_8b: 0.3571 (0.3442, 0.3691)
 qwen_7b: 0.4076 (0.3952, 0.42)
-llama4v: 0 (0, 0)
-internvl_78b: 0.4956 (0.4833, 0.5075)
-qwen_72b: 0.4988 (0.486, 0.5111)
+llama4v: 0.4484 (0.4346, 0.46)
+internvl_78b: 0.4956 (0.4821, 0.5077)
+qwen_72b: 0.4988 (0.4851, 0.5115)
 ```

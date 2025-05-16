@@ -51,7 +51,7 @@ RAW_RESULT_PATHS = {}
 for model in MODELS:
     RAW_RESULT_PATHS[model] = {}
     for input_modality in INPUT_MODALITIES:
-        RAW_RESULT_PATHS[model][input_modality] = f"assets/raw_predictions/generative_{model}_{input_modality}.json"
+        RAW_RESULT_PATHS[model][input_modality] = f"assets/raw_predictions/generative_{model}_{input_modality}.json".replace("*", "star")
 
 # Plotting resources
 PLOT_SUBSETS = {
